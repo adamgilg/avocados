@@ -1,0 +1,18 @@
+<div class="row">
+  <% @stores.each do |store| %>
+    <div class="store-info large-6 columns">
+      <%= store.name %>
+      <%= store.address %>
+    </div>
+
+    <% store.avocados.each do |avocado| %>
+      <div class="avocado-info large-6 columns">
+        <%= avocado.price %>
+        <%= avocado.description %>
+        <%= avocado.ripeness_rating %>
+        <%= avocado.flavour_rating %>
+        <%= "organic" if avocado.organic == true %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
